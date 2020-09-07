@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="basic.StudentMapper"  >
+
+  <resultMap id="basicResult" type="pojo.Student">
+
+    <id column="SNO" jdbcType="VARCHAR" property="sno"></id>
+    <id column="SNAME" jdbcType="VARCHAR" property="sname"></id>
+    <id column="SSEX" jdbcType="VARCHAR" property="ssex"></id>
+    <id column="SBIRTHDAY" jdbcType="DATE" property="sbirthday"></id>
+    <id column="CLASS" jdbcType="VARCHAR" property="clazz"></id>
+
+  </resultMap>
+
+  <select id="selectAll" resultMap="basicResult" databaseId="oracle">
+        select * from STUDENT where SNAME = '曾华'
+  </select>
+
+</mapper>

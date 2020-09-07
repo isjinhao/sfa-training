@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="www.xxx.com" elementFormDefault="qualified">
+
+  <element name="inventory">
+    <complexType>
+      <sequence maxOccurs="unbounded">
+        <element name="book">
+
+          <complexType>
+            <sequence>
+              <element name="title" type="string"></element>
+              <element name="author" type="string"></element>
+              <element name="publisher" type="string"></element>
+              <element name="isbn" type="long"></element>
+              <element name="price" type="double"></element>
+            </sequence>
+          </complexType>
+
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+
+</schema>

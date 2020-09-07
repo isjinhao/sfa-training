@@ -1,0 +1,8 @@
+package headfirst._13_proxy.remote;
+
+/**
+ * Created by Gavin on 2017/2/13.
+ */
+public interface Observer {
+    void update(float temp, float humidity, float pressure);
+}

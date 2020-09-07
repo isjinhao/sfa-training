@@ -1,0 +1,14 @@
+package basic;
+
+import java.util.List;
+import pojo.Student;
+
+/**
+ * @author 01395265
+ * @description TODO
+ * @date 2020/7/27
+ */
+public interface StudentMapper {
+
+    List<Student> selectAll();
+}
