@@ -7,7 +7,7 @@
   <properties resource="db.properties">
 <!--    <property name="abc" value="${123:aha}"/>-->
   </properties>
-
+  
 
   <environments default="development">
     <environment id="development">
