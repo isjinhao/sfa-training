@@ -21,7 +21,6 @@
   <properties>
     <junit-version>4.12</junit-version>
     <mybatis-version>3.4.6</mybatis-version>
-    <odbc-version>11.2.0.1.0</odbc-version>
     <mysql-jdbc-version>8.0.13</mysql-jdbc-version>
     <jackson-version>2.4.5</jackson-version>
     <apache-httpclient>4.4.1</apache-httpclient>
@@ -40,11 +39,6 @@
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis</artifactId>
         <version>${mybatis-version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.oracle</groupId>
-        <artifactId>ojdbc6</artifactId>
-        <version>${odbc-version}</version>
       </dependency>
       <dependency>
         <groupId>mysql</groupId>

@@ -34,8 +34,7 @@ public class MybatisBootStrap {
              * 视为一种代码“坏习惯”。因此 SqlSessionFactory 的最佳作用域是应用作用域。
              */
 
-            Properties properties = new Properties();
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader, properties);
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
 
             /**
              * 每个线程都应该有它自己的 SqlSession 实例。SqlSession 的实例不是线程安全的，因此是不能被共享的，
@@ -43,8 +42,8 @@ public class MybatisBootStrap {
              */
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
-            List<Student> objects = sqlSession.selectList("selectAll");
-            System.out.println(objects);
+//            List<Student> objects = sqlSession.selectList("selectAll");
+//            System.out.println(objects);
 
             try {
                 /**

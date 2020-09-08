@@ -24,12 +24,11 @@ public class TestResultSetType {
             String sql = "select STUDENT.SNO, STUDENT.SNAME, STUDENT.SSEX, STUDENT.SBIRTHDAY, STUDENT.CLASS from STUDENT";
 
 //            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
-//            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
 
-            DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
 
-//            con = DriverManager.getConnection("jdbc:mysql://188.131.246.195:3306/mybatis_learn", "root", "601220zjh...");
-            con = DriverManager.getConnection("jdbc:oracle:thin:@10.88.26.91:1521:focnew", "focnew", "focnew#123");
+            con = DriverManager.getConnection("jdbc:mysql://188.131.246.195:3306/mybatis_learn", "root", "601220zjh...");
+//            con = DriverManager.getConnection("jdbc:oracle:thin:@10.88.26.91:1521:focnew", "focnew", "focnew#123");
 
             /**
              * 测试数据库是否支持 ResultSetType 类型

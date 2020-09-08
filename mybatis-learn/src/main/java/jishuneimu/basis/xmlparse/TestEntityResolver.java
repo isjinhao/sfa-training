@@ -55,7 +55,7 @@ public class TestEntityResolver {
             }
         });
 
-        Document document = documentBuilder.parse("mybatis-learn/src/main/java/jishuneimu/basis/xmlparse/StudentMapper.xml");
+        Document document = documentBuilder.parse("mybatis-learn/src/main/java/jishuneimu/basis/xmlparse/inventory.xml");
 
         XPathFactory xPathFactory = XPathFactory.newInstance();
         XPath xPath = xPathFactory.newXPath();
