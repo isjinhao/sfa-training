@@ -1,4 +1,4 @@
-package grammer;
+package jdkclass;
 
 /**
  * @author 01395265

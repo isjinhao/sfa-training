@@ -1,4 +1,4 @@
-package jdkclass;
+package jdkclass.string;
 
 import org.junit.Test;
 
