@@ -1,4 +1,4 @@
-package jdkclass;
+package jdkclass.string;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,5 +1,8 @@
 package grammer.stream;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 import org.junit.Test;
 
@@ -16,7 +19,6 @@ public class TestStreamReduce {
      *  - T reduce(T identity, BinaryOperator<T> accumulator);
      *  - <U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner);
      */
-
 
     /**
      * @return void
@@ -44,7 +46,6 @@ public class TestStreamReduce {
          *  return foundAny ? Optional.of(result) : Optional.empty();
          * but is not constrained to execute sequentially. The accumulator function must be an associative function. This is a terminal operation.
          */
-
         Stream.of(1, 2, 3).reduce((sum, item) -> {
             System.out.println(sum);
             return sum - item;
@@ -73,12 +74,33 @@ public class TestStreamReduce {
          * but is not constrained to execute sequentially. The identity value must be an identity for the accumulator function.
          * This means that for all t, accumulator.apply(identity, t) is equal to t. The accumulator function must be an associative function. This is a terminal operation.
          */
-
         Integer reduce = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10).reduce(1, (sum, item) -> {
             System.out.println(sum);
             return sum - item;
         });
         System.out.println(reduce);
+
+    }
+
+
+    @Test
+    public void test3() {
+
+        /**
+         * Reduce 完成集合汇聚。
+         */
+        List<String> list1 = Arrays.asList("1", "2");
+        List<String> list2 = Arrays.asList("3", "4");
+        List<String> list3 = Arrays.asList("5", "6");
+        List<String> list4 = Arrays.asList("7", "8");
+        List<String> list5 = Arrays.asList("9", "10");
+
+        List<String> list = Stream.of(list1, list2, list3, list4, list5).reduce(new ArrayList<>(), (sum, item) -> {
+            sum.addAll(item);
+            return sum;
+        });
+
+        list.forEach(System.out::println);
 
     }
 
