@@ -153,6 +153,7 @@ public class TestString {
     @Test
     public void test9() {
         String str = "asdzxcasd";
+        // 会替换所有出现的字符
         String str1 = str.replace('a', 'g');
         // CharSequence target, CharSequence replacement
         String str2 = str.replace("asd", "fgh");
