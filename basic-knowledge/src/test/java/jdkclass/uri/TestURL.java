@@ -18,7 +18,8 @@ public class TestURL {
     @Test
     public void test1() throws MalformedURLException {
 
-        String urlPath = "file:///E:\\notes\\README.md";
+//        String urlPath = "file:///E:\\notes\\README.md";
+        String urlPath = "https://www.baidu.com/";
 
         URL url = new URL(urlPath);
 

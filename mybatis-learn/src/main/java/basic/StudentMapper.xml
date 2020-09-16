@@ -14,8 +14,8 @@
 
   </resultMap>
 
-  <select id="selectAll" resultMap="basicResult" databaseId="mysql">
-      select * from STUDENT where SNAME = '曾华'
+  <select id="selectAll" resultMap="basicResult">
+      select * from STUDENT where SNO = ${list[0]}
   </select>
 
 </mapper>

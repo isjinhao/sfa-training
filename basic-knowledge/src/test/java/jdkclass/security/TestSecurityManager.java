@@ -1,4 +1,4 @@
-package jdkclass;
+package jdkclass.security;
 
 import java.lang.reflect.ReflectPermission;
 
