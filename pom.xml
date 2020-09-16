@@ -16,6 +16,8 @@
     <module>design-pattern</module>
     <module>spring-learn</module>
     <module>east-develop</module>
+    <module>guava</module>
+    <module>guava-learn</module>
   </modules>
 
   <properties>
@@ -25,6 +27,8 @@
     <jackson-version>2.4.5</jackson-version>
     <apache-httpclient>4.4.1</apache-httpclient>
     <commons-lang>2.6</commons-lang>
+    <spring-version>4.3.2.RELEASE</spring-version>
+    <guava-version>18.0</guava-version>
   </properties>
 
   <dependencyManagement>
@@ -68,7 +72,12 @@
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-aop</artifactId>
-        <version>4.3.2.RELEASE</version>
+        <version>${spring-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava-version}</version>
       </dependency>
 
     </dependencies>
