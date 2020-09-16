@@ -1,6 +1,8 @@
 package basic;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
 import pojo.Student;
 
 /**
@@ -10,5 +12,5 @@ import pojo.Student;
  */
 public interface StudentMapper {
 
-    List<Student> selectAll();
+    List<Student> selectAll(@Param("list") List<String> strs);
 }

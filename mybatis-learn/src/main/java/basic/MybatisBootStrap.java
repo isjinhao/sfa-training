@@ -2,6 +2,8 @@ package basic;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import org.apache.ibatis.io.Resources;
@@ -53,7 +55,8 @@ public class MybatisBootStrap {
                  * 不会有什么问题，但是你很快会发现，在这个作用域上管理太多像 SqlSession 的资源会让你忙不过来。 因此，最好将映射器放在方法作用域内。
                  */
                 StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
-                List<Student> students = studentMapper.selectAll();
+//                List<Student> students = studentMapper.selectAll();
+                List<Student> students = studentMapper.selectAll(new ArrayList<>(Arrays.asList("108")));
                 System.out.println(students);
             } finally {
                 sqlSession.close();
