@@ -13,4 +13,6 @@ import pojo.Student;
 public interface StudentMapper {
 
     List<Student> selectAll(@Param("list") List<String> strs);
+
+    Integer insert();
 }

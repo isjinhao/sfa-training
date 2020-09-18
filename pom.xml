@@ -16,13 +16,12 @@
     <module>design-pattern</module>
     <module>spring-learn</module>
     <module>east-develop</module>
-    <module>guava</module>
     <module>guava-learn</module>
   </modules>
 
   <properties>
     <junit-version>4.12</junit-version>
-    <mybatis-version>3.4.6</mybatis-version>
+    <mybatis-version>3.5.5</mybatis-version>
     <mysql-jdbc-version>8.0.13</mysql-jdbc-version>
     <jackson-version>2.4.5</jackson-version>
     <apache-httpclient>4.4.1</apache-httpclient>

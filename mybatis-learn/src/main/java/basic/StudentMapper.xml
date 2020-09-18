@@ -4,18 +4,20 @@
 
 <mapper namespace="basic.StudentMapper"  >
 
+<!--  <cache-ref namespace="basic.ATeacherMapper"/>-->
+  <cache type="PERPETUAL" eviction="LRU" flushInterval="120000" readOnly="true" size="1024"></cache>
+
   <resultMap id="basicResult" type="pojo.Student">
-
-    <id column="SNO" jdbcType="VARCHAR" property="sno"></id>
-    <id column="SNAME" jdbcType="VARCHAR" property="sname"></id>
-    <id column="SSEX" jdbcType="VARCHAR" property="ssex"></id>
-    <id column="SBIRTHDAY" jdbcType="DATE" property="sbirthday"></id>
     <id column="CLASS" jdbcType="VARCHAR" property="clazz"></id>
-
   </resultMap>
 
-  <select id="selectAll" resultMap="basicResult">
-      select * from STUDENT where SNO = ${list[0]}
+  <select id="selectAll" resultMap="basicResult" databaseId="mysql">
+    <!-- select * from STUDENT  -->
+      select * from STUDENT where SNO = #{sno}
+  </select>
+  <select id="insert" resultMap="basicResult" databaseId="mysql" >
+    <!-- select * from STUDENT  -->
+     insert into STUDENT(SNO, SNAME, SSEX, CLASS) values('123', 'abc', '男', '1234')
   </select>
 
 </mapper>
