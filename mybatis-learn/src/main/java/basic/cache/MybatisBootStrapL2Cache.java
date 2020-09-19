@@ -1,23 +1,21 @@
-package basic;
+package basic.cache;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import pojo.Student;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.List;
 
 /**
  * @author 01395265
  * @description TODO
  * @date 2020/7/27
  */
-public class MybatisBootStrap {
+public class MybatisBootStrapL2Cache {
 
     public static void main(String[] args) {
 
@@ -44,8 +42,10 @@ public class MybatisBootStrap {
              */
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
-            RowBounds rowBounds = new RowBounds(1, 2);
-
+            List<Student> objects = sqlSession.selectList("selectAll", "109");
+            System.out.println(objects);
+            List<Student> objects1 = sqlSession.selectList("selectAll", "109");
+            System.out.println(objects1);
 
             try {
                 /**
@@ -54,10 +54,10 @@ public class MybatisBootStrap {
                  * 它们的方法中被获取，使用完毕之后即可丢弃。 映射器实例并不需要被显式地关闭。尽管在整个请求作用域保留映射器实例
                  * 不会有什么问题，但是你很快会发现，在这个作用域上管理太多像 SqlSession 的资源会让你忙不过来。 因此，最好将映射器放在方法作用域内。
                  */
-                StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
-//                List<Student> students = studentMapper.selectAll();
-                List<Student> students = studentMapper.selectAll("109");
-                System.out.println(students);
+//                StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
+////                List<Student> students = studentMapper.selectAll();
+//                List<Student> students = studentMapper.selectAll(new ArrayList<>(Arrays.asList("108")));
+//                System.out.println(students);
             } finally {
                 sqlSession.close();
             }

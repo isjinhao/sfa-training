@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="basic.StudentMapper"  >
+<mapper namespace="basic.StudentMapper" >
 
 <!--  <cache-ref namespace="basic.ATeacherMapper"/>-->
   <cache type="PERPETUAL" eviction="LRU" flushInterval="120000" readOnly="true" size="1024"></cache>
@@ -15,7 +15,8 @@
     <!-- select * from STUDENT  -->
       select * from STUDENT where SNO = #{sno}
   </select>
-  <select id="insert" resultMap="basicResult" databaseId="mysql" >
+
+  <select id="insert" databaseId="mysql" resultType="java.lang.Integer">
     <!-- select * from STUDENT  -->
      insert into STUDENT(SNO, SNAME, SSEX, CLASS) values('123', 'abc', '男', '1234')
   </select>
